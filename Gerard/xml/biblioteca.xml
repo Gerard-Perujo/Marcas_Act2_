@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE Biblioteca SYSTEM "biblioteca.dtd">
-
-<Biblioteca>
+<!--<!DOCTYPE Biblioteca SYSTEM "biblioteca.dtd">-->
+<Biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="biblioteca.xsd">
     <Documentos>
         <libros>
             <libro id="L0001" tipo="novela" paginas="768">
@@ -183,8 +183,8 @@
                 </secciones>
             </revista>
         </revistas>
-        <periodicos>
-           <periodico id="P0001" tipo="nacionales" fecha_publicacion="29/04/2023">
+        <periodicos> 
+            <periodico id="P0001" tipo="nacionales" fecha_publicacion="2023-04-29">
                 <titulo>El Mundo</titulo>
                 <indice>En la pagina 2</indice>
                 <sections>
@@ -216,7 +216,7 @@
                 </sections>
                 <contenido></contenido>
            </periodico>
-           <periodico id="P0002" tipo="internacionales" fecha_publicacion="29/04/2023">
+           <periodico id="P0002" tipo="internacionales" fecha_publicacion="2023-04-29">
                 <titulo>The New York Times</titulo> 
                 <indice>Es la pagina 3</indice>
                 <sections>
