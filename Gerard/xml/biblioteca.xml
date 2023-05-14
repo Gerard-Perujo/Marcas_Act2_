@@ -2,6 +2,7 @@
 <!--<!DOCTYPE Biblioteca SYSTEM "biblioteca.dtd">-->
 <Biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="biblioteca.xsd">
+<!--<Biblioteca>-->
     <Documentos>
         <libros>
             <libro id="L0001" tipo="novela" paginas="768">
