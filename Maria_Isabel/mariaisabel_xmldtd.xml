@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-                                    <!--Se crea el DTD interno-->
+<?xml version="1.0" encoding="UTF-8"?>
+   <!--                               
+                                    Se crea el DTD interno
 <!DOCTYPE biblioteca[
     <!ELEMENT biblioteca (libros, revistas, periodicos)>
 
-                        <!--Se crean los elementos y atributos de libros-->
+                        Se crean los elementos y atributos de libros
     <!ELEMENT libros (libro+)>
     <!ATTLIST libro id ID #REQUIRED>
     <!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED>
@@ -25,7 +26,7 @@
 
 
 
-                        <!--Se crean los elementos y atributos de revistas-->
+                        Se crean los elementos y atributos de revistas
     <!ELEMENT revistas (revista+)>
     <!ATTLIST revista id ID #REQUIRED>
     <!ATTLIST revista tipo_clase (informática | corazón | coches | investigación | otras) #REQUIRED>
@@ -46,7 +47,7 @@
     <!ATTLIST contenidorevista href CDATA #REQUIRED>
 
 
-                        <!--Se crean los elementos y atributos de periodicos-->
+                        Se crean los elementos y atributos de periodicos
     <!ELEMENT periodicos (periodico+)>
     <!ATTLIST periodico id ID #REQUIRED>
     <!ATTLIST periodico tipo_clase (nacional | internacional) #REQUIRED>
@@ -67,14 +68,15 @@
     
 ]>
 
+-->
 
 
 
 
 
 
-
-<biblioteca>
+<biblioteca xmlns="http://www.w3.org/2001/XMLSchema-instance" 
+ noNamespaceSchemaLocation="xsd_maria_isabel.xsd">
 <!--La etiqueta padre de todo el XML es biblioteca.
     Dentro de ella se encuentran libros, revistas y periódicos y, a su vez, 
     dentro de estos hay más elementos que se presentarán a continuación. -->
@@ -360,6 +362,6 @@
                     </articulo>
                 </seccionperiodico>
             </seccionesperiodico>
-        </periodico>
+        </periodico> 
     </periodicos>
 </biblioteca>
