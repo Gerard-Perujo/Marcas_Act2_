@@ -36,7 +36,7 @@
                                     <attribute name ="id" use="required">
                                         <simpleType>
                                             <restriction base="string">
-                                                <pattern value="[L]{1}[0-9]{4}"></pattern>
+                                                <pattern value="[L]{1}[0-9]{4}"></pattern> 
                                             </restriction>
                                         </simpleType>
                                     </attribute> 
@@ -75,7 +75,7 @@
                                                                 <element name="contenidorevista">
                                                                     <complexType>
                                                                         <attribute name="href" use="required"/>
-                                                                    </complexType>
+                                                                    </complexType> 
                                                                 </element>
                                                             </sequence>
                                                             <attribute name="paginas" type="integer" use="required"/>
@@ -114,7 +114,7 @@
                 <element name="periodicos">
                     <complexType>
                         <sequence>
-                            <element name="periodico" minOccurs="1" maxOccurs="unbounded">
+                            <element name="periodico" minOccurs="1" maxOccurs="unbounded"> 
                                 <complexType>
                                     <sequence>
                                         <element name="tituloperiodico" type="string"/>
@@ -153,7 +153,7 @@
                                         </simpleType>
                                     </attribute>
                                     <attribute name ="tipo_clase" use="required">
-                                        <simpleType>
+                                        <simpleType>  
                                             <restriction base="string">
                                                 <enumeration value="nacional"/>
                                                 <enumeration value="internacional"/>
