@@ -80,7 +80,7 @@
 <!--La etiqueta padre de todo el XML es biblioteca.
     Dentro de ella se encuentran libros, revistas y periódicos y, a su vez, 
     dentro de estos hay más elementos que se presentarán a continuación. -->
-                                             <!--Libros-->  
+ <!--<biblioteca>-->                                            <!--Libros-->  
     <libros>
         <libro id="L1234" tipo_clase="novela" paginas="448">
             <titulo>Madame Bovary</titulo>
