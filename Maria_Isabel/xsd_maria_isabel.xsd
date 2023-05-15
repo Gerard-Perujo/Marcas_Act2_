@@ -1,145 +1,158 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema">
     <element name="biblioteca">
         <complexType>
             <sequence>
-                <element name="libros" type=":string"/>
+                <element name="libros">
                     <complexType>
                         <sequence>
-                            <element name="libro" type=":string" minOccurs="1" maxOccurs="unbounded"/>
+                            <element name="libro" maxOccurs="unbounded">
                                 <complexType>
                                     <sequence>
-                                        <element name="titulo" type=":string"/>
-                                        <element name="capitulos" type=":string"/>
+                                        <element name="titulo" type="string"/>
+                                        <element name="capitulos">
                                             <complexType>
                                                 <sequence>
-                                                    <element name="capitulo" minOccurs="1" maxOccurs="unbounded"/>
+                                                    <element name="capitulo" minOccurs="1" maxOccurs="unbounded">
                                                         <complexType>
                                                             <sequence>
-                                                                <element name="titulocapitulo" type=":string"/>
-                                                                <element name="contenido" type=":anyURI"/>
+                                                                <element name="titulocapitulo" type="string"/>
+                                                                <element name="contenido" type="anyURI"/>
                                                             </sequence>
-                                                            <attribute name="paginas" type=":integer" use="required"/>
+                                                            <attribute name="paginas" type="integer" use="required"/>
                                                         </complexType>
+                                                    </element>    
                                                 </sequence>
                                             </complexType>
             
                                         </element>
-                                        <element name="indice" type=":string"/>
-                                        <element name="sinopsis" type=":string"/>
+                                        <element name="indice" type="string"/>
+                                        <element name="sinopsis" type="string"/>
                                     </sequence>
                                     <attribute name ="id" use="required">
-                                        <restriction base="string">
-                                            <pattern value="[L]{1}[0-9]{4}"></pattern>
-                                        </restriction>
-                                    </attribute>
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <pattern value="[L]{1}[0-9]{4}"></pattern>
+                                            </restriction>
+                                        </simpleType>
+                                    </attribute> 
                                     <attribute name ="tipo_clase" use="required">
-                                        <restriction base="string">
-                                            <enumeration value="novela"/>
-                                            <enumeration value="infantil"/>
-                                            <enumeration value="didáctico"/>
-                                        </restriction>
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <enumeration value="novela"/>
+                                                <enumeration value="infantil"/>
+                                                <enumeration value="didáctico"/>
+                                            </restriction>
+                                        </simpleType>
                                     </attribute>
-                                    <attribute name ="paginas" type=":integer" use="required"/>
+                                    <attribute name ="paginas" type="integer" use="required"/>
                                 </complexType>
-                            <element/>
+                            </element>
                         </sequence>
                     </complexType>
                 </element>
 
-                <element name="revistas" type=":string"/>
+                <element name="revistas">
                     <complexType>
                         <sequence>
-                            <element name="revista" type=":string" minOccurs="1" maxOccurs="unbounded"/>
+                            <element name="revista" minOccurs="1" maxOccurs="unbounded">
                                 <complexType>
                                     <sequence>
-                                        <element name="titulorevista" type=":string"/>
-                                        <element name="numero" type=":integer"/>
-                                        <element name="indicerevista" type=":string"/>
-                                        <element name="secciones" type=":string"/>
+                                        <element name="titulorevista" type="string"/>
+                                        <element name="numero" type="integer"/>
+                                        <element name="indicerevista" type="string"/>
+                                        <element name="secciones">
                                             <complexType>
                                                 <sequence>
-                                                    <element name="seccion" minOccurs="1" maxOccurs="unbounded"/>
+                                                    <element name="seccion" minOccurs="1" maxOccurs="unbounded">
                                                         <complexType>
                                                             <sequence>
-                                                                <element name="nombre" type=":string"/>
-                                                                <element name="contenidorevista" type=":anyURI"
+                                                                <element name="nombre" type="string"/>
+                                                                <element name="contenidorevista" type="anyURI"/>
                                                             </sequence>
-                                                            <attribute name="paginas" type=":integer" use="required"/>
+                                                            <attribute name="paginas" type="integer" use="required"/>
                                                         </complexType>
-                                                    <element/>    
+                                                    </element>    
                                                 </sequence>
-                                            </complexType>
-                                        <element/>
+                                            </complexType> 
+                                        </element>
                                     </sequence>
                                     <attribute name ="id" use="required">
-                                        <restriction base="string">
-                                            <pattern value="[R]{1}[0-9]{4}"></pattern>
-                                        </restriction>
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <pattern value="[R]{1}[0-9]{4}"></pattern>
+                                            </restriction>
+                                        </simpleType>
                                     </attribute>
                                     <attribute name ="tipo_clase" use="required">
-                                        <restriction base="string">
-                                            <enumeration value="informática"/>
-                                            <enumeration value="corazón"/>
-                                            <enumeration value="coches"/>
-                                            <enumeration value="investigación"/>
-                                            <enumeration value="otras"/>
-                                        </restriction>
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <enumeration value="informática"/>
+                                                <enumeration value="corazón"/>
+                                                <enumeration value="coches"/>
+                                                <enumeration value="investigación"/>
+                                                <enumeration value="otras"/>
+                                            </restriction>
+                                        </simpleType>
                                     </attribute>
-                                    <attribute name ="paginas" type=":integer" use="required"/>
+                                    <attribute name ="paginas" type="integer" use="required"/>
                                 </complexType>
-                            <element/>
+                            </element>
                         </sequence>
                     </complexType>
-                <element/>
+                </element>
 
 
-                <element name="periodicos" type="string"/>
+                <element name="periodicos">
                     <complexType>
                         <sequence>
-                            <element name="periodico" type=":string" minOccurs="1" maxOccurs="unbounded"/>
+                            <element name="periodico" minOccurs="1" maxOccurs="unbounded">
                                 <complexType>
                                     <sequence>
-                                        <element name="tituloperiodico" type=":string"/>
-                                        <element name="indiceperiodico" type=":string"/>
-                                        <element name="seccionesperiodico" type=":string"/>
+                                        <element name="tituloperiodico" type="string"/>
+                                        <element name="indiceperiodico" type="string"/>
+                                        <element name="seccionesperiodico">
                                             <complexType>
-                                                <sequence>
-                                                    <element name="seccionperiodico" type=":string" minOccurs="1" maxOccurs="unbounded"/>
+                                                <sequence> 
+                                                    <element name="seccionperiodico" minOccurs="1" maxOccurs="unbounded">
                                                         <complexType>
                                                             <sequence>
-                                                                <element name="articulo" type=":string" minOccurs="1" maxOccurs="unbounded">
+                                                                <element name="articulo" minOccurs="1" maxOccurs="unbounded">
                                                                     <complexType>
                                                                         <sequence>
-                                                                            <element name ="contenidoperiodico" type=":anyURI"/>
+                                                                            <element name ="contenidoperiodico" type="anyURI"/>
                                                                         </sequence>
-                                                                        <attribute name="autor" type=":string" use="required"/>
+                                                                        <attribute name="autor" type="string" use="required"/>
                                                                     </complexType>
                                                                 </element>
                                                             </sequence>
-                                                            <attribute name="tipo" type=":string" use="required"/>
+                                                            <attribute name="tipo" type="string" use="required"/>
                                                         </complexType>
-                                                    <element/>
+                                                    </element>
                                                 </sequence>
                                             </complexType>
                                         </element>
                                     </sequence>
                                     <attribute name ="id" use="required">
-                                        <restriction base="string">
-                                            <pattern value="[P]{1}[0-9]{4}"></pattern>
-                                        </restriction>
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <pattern value="[P]{1}[0-9]{4}"></pattern>
+                                            </restriction>
+                                        </simpleType>
                                     </attribute>
                                     <attribute name ="tipo_clase" use="required">
-                                        <restriction base="string">
-                                            <enumeration value="nacional"/>
-                                            <enumeration value="internacional"/>
-                                        </restriction>
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <enumeration value="nacional"/>
+                                                <enumeration value="internacional"/>
+                                            </restriction>
+                                        </simpleType>
                                     </attribute>
-                                    <attribute name ="publicación" type=":string" use="required"/>
+                                    <attribute name ="publicación" type="string" use="required"/>
                                 </complexType>
                             </element>
                         </sequence>
-                    </complexType>
+                    </complexType>  
                 </element>    
             </sequence>
         </complexType>
