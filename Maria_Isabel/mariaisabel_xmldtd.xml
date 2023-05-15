@@ -75,8 +75,8 @@
 
 
 
-<biblioteca xmlns="http://www.w3.org/2001/XMLSchema-instance" 
- noNamespaceSchemaLocation="xsd_maria_isabel.xsd">
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:noNamespaceSchemaLocation="xsd_maria_isabel.xsd">
 <!--La etiqueta padre de todo el XML es biblioteca.
     Dentro de ella se encuentran libros, revistas y periódicos y, a su vez, 
     dentro de estos hay más elementos que se presentarán a continuación. -->

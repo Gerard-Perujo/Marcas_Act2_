@@ -17,7 +17,11 @@
                                                         <complexType>
                                                             <sequence>
                                                                 <element name="titulocapitulo" type="string"/>
-                                                                <element name="contenido" type="anyURI"/>
+                                                                <element name="contenido">
+                                                                    <complexType>
+                                                                    <attribute name="href" use="required"/>
+                                                                    </complexType>
+                                                                </element>
                                                             </sequence>
                                                             <attribute name="paginas" type="integer" use="required"/>
                                                         </complexType>
@@ -68,7 +72,11 @@
                                                         <complexType>
                                                             <sequence>
                                                                 <element name="nombre" type="string"/>
-                                                                <element name="contenidorevista" type="anyURI"/>
+                                                                <element name="contenidorevista">
+                                                                    <complexType>
+                                                                        <attribute name="href" use="required"/>
+                                                                    </complexType>
+                                                                </element>
                                                             </sequence>
                                                             <attribute name="paginas" type="integer" use="required"/>
                                                         </complexType>
@@ -117,10 +125,14 @@
                                                     <element name="seccionperiodico" minOccurs="1" maxOccurs="unbounded">
                                                         <complexType>
                                                             <sequence>
-                                                                <element name="articulo" minOccurs="1" maxOccurs="unbounded">
-                                                                    <complexType>
+                                                                <element name="articulo" maxOccurs="unbounded">
+                                                                    <complexType mixed="true">
                                                                         <sequence>
-                                                                            <element name ="contenidoperiodico" type="anyURI"/>
+                                                                            <element name ="contenidoperiodico">
+                                                                                <complexType>   
+                                                                                    <attribute name="href" use="required"/>
+                                                                                </complexType>
+                                                                            </element>
                                                                         </sequence>
                                                                         <attribute name="autor" type="string" use="required"/>
                                                                     </complexType>
@@ -148,7 +160,7 @@
                                             </restriction>
                                         </simpleType>
                                     </attribute>
-                                    <attribute name ="publicación" type="string" use="required"/>
+                                    <attribute name ="publicacion" type="string" use="required"/>
                                 </complexType>
                             </element>
                         </sequence>
